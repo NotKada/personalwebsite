@@ -1,0 +1,82 @@
+const idleSrc = "Images/placeholder.png";
+const hoverSrc = "Images/LookUpPlaceholder.png";
+const clickSrc = "Images/PatPlaceholder.png";
+const particleSrc = "Images/Heart.png";
+
+
+[idleSrc, hoverSrc, clickSrc].forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cardImage = document.getElementById("floatingImage");
+  const headButton = document.querySelector(".pet-button");
+
+  if (!cardImage) {
+    console.error("cardImage not found");
+    return;
+  }
+
+  if (!headButton) {
+    console.error("headButton not found");
+    return;
+  }
+
+  headButton.addEventListener("mouseenter", () => {
+    cardImage.src = hoverSrc;
+  });
+
+  headButton.addEventListener("mouseleave", () => {
+    cardImage.src = idleSrc;
+  });
+
+  let clickTimeout;
+
+   const rect = cardImage.getBoundingClientRect();
+
+   let canClick = true;
+  const cooldownTime = 1500;
+
+  headButton.addEventListener("mousedown", () => {
+
+    if (!canClick) return;
+    canClick = false;
+    const wrapper = document.querySelector(".floating-image");
+
+    clearTimeout(clickTimeout);
+    cardImage.src = clickSrc;
+
+    const particleCount = 7;
+    const delayBetween = 75;
+
+    clickTimeout = setTimeout(() => {
+      cardImage.src = idleSrc;
+    }, 900);
+
+    for (let i = 0; i < particleCount; i++) {
+      setTimeout(() => {
+        const particle = document.createElement("img");
+        particle.src = particleSrc; 
+        particle.className = "particle";
+
+        const offsetX = Math.random() * rect.width; 
+        const offsetY = Math.random() * rect.height;  
+
+        particle.style.left = `${offsetX}px`;
+        particle.style.top = `${offsetY}px`;
+
+        wrapper.appendChild(particle);
+
+        particle.addEventListener("animationend", () => {
+          particle.remove();
+        });
+      }, i * delayBetween);
+    }
+
+    setTimeout(() => {
+      canClick = true;
+    }, cooldownTime);
+  });
+});
+
