@@ -4,13 +4,51 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: black;
+.bg {
+  background-image: url("../Images/bgplace.png");
+  background-color: #cccccc;
+  height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-h1 {
+.intro {
+  padding: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.intro-text {
+  margin-right: 20px;
+}
+
+.intro.image {
+  margin-left: auto;
+}
+
+.BWT {
+  color:white;
+  font-size: 5cap;
+  text-decoration-style: wavy;
+  font-family: cursive;
+  text-align: center;
+}
+
+.MWT {
+  color:white;
+  font-size: 3cap;
+  text-decoration-style: wavy;
+  font-family: cursive;
+  text-align: center;
+}
+
+h1, footer {
   background: rgb(105, 80, 59);
-  width: 100vw;
+  width: 100%;
   height: 125px;
   margin: 0px;
   padding: 0px;
@@ -26,31 +64,88 @@ h1 {
   position: relative;
   display: inline-block;
   animation:
-    floatY 7s ease-in-out infinite,
-    floatX 9s ease-in-out infinite,
-    rotate 11s ease-in-out infinite;
+    imgfloatY 7s ease-in-out infinite,
+    imgfloatX 9s ease-in-out infinite,
+    imgrotate 11s ease-in-out infinite;
+  
 }
 
-
-@keyframes floatY {
+@keyframes imgfloatY {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
 }
 
-@keyframes floatX {
+@keyframes imgfloatX {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(15px); }
 }
 
-@keyframes rotate {
+@keyframes imgrotate {
   0%, 100% { rotate: -3deg; }
   50% { rotate: 3deg; }
+}
+
+.floating-text1 {
+  padding: 20px;
+  animation: 
+    txt1floatY 7s ease-in-out infinite,
+    txt1floatX 9s ease-in-out infinite,
+    txt1rotate 11s ease-in-out infinite;
+}
+
+@keyframes txt1floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes txt1floatX {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+
+@keyframes txt1rotate {
+  0%, 100% { rotate: -1deg; }
+  50% { rotate: 1deg; }
+}
+
+.floating-text2 {
+  padding: 20px;
+  animation: 
+    txt2floatY 9s ease-in-out infinite,
+    txt2floatX 7s ease-in-out infinite,
+    txt2rotate 11s ease-in-out infinite;
+}
+
+@keyframes txt2floatY {
+  0%, 100% { transform: translateY(7px); }
+  50% { transform: translateY(0); }
+}
+
+@keyframes txt2floatX {
+  0%, 100% { transform: translateX(-15px); }
+  50% { transform: translateX(0); }
+}
+
+@keyframes txt2rotate {
+  0%, 100% { rotate: 1deg; }
+  50% { rotate: -1deg; }
+}
+
+.squish {
+  animation: squish 150ms ease-in;
+}
+
+@keyframes squish {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08, 0.88); }
+  70%  { transform: scale(0.98, 1.02); }
+  100% { transform: scale(1); }
 }
 
 .pet-button {
   position: absolute;
 
-  top: 20%;
+  top: 25%;
   left: 30%;
   width: 40%;
   height: 20%;

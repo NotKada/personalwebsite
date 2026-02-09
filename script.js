@@ -1,13 +1,15 @@
-const idleSrc = "Images/placeholder.png";
-const hoverSrc = "Images/LookUpPlaceholder.png";
-const clickSrc = "Images/PatPlaceholder.png";
+const idleSrc = "Images/Idle.png";
+const hoverSrc = "Images/LookUp.png";
+const clickSrc = "Images/Pat.png";
 const particleSrc = "Images/Heart.png";
-
+var sqeaksound = new Audio('Sounds/Squeak.mp3');
 
 [idleSrc, hoverSrc, clickSrc].forEach(src => {
   const img = new Image();
   img.src = src;
 });
+
+let patted = false
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardImage = document.getElementById("floatingImage");
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   headButton.addEventListener("mouseleave", () => {
+    if (patted) return;
     cardImage.src = idleSrc;
   });
 
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!canClick) return;
     canClick = false;
+    patted = true
     const wrapper = document.querySelector(".floating-image");
 
     clearTimeout(clickTimeout);
@@ -53,6 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
     clickTimeout = setTimeout(() => {
       cardImage.src = idleSrc;
     }, 900);
+    
+    cardImage.classList.remove("squish");
+    void cardImage.offsetWidth;
+    cardImage.classList.add("squish");
+
+    sqeaksound.play();
 
     for (let i = 0; i < particleCount; i++) {
       setTimeout(() => {
@@ -76,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       canClick = true;
+      patted = false
     }, cooldownTime);
   });
 });
