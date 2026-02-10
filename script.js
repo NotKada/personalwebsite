@@ -1,4 +1,4 @@
-const idleSrc = "Images/Idle.png";
+const idleSrc = "Images/Idle.gif";
 const hoverSrc = "Images/LookUp.png";
 const clickSrc = "Images/Pat.png";
 const particleSrc = "Images/Heart.png";
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const rect = cardImage.getBoundingClientRect();
 
    let canClick = true;
-  const cooldownTime = 1500;
+  const cooldownTime = 750;
 
   headButton.addEventListener("mousedown", () => {
 
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sqeaksound.play();
 
+//Create particles
     for (let i = 0; i < particleCount; i++) {
       setTimeout(() => {
         const particle = document.createElement("img");
@@ -78,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         wrapper.appendChild(particle);
 
+       
         particle.addEventListener("animationend", () => {
           particle.remove();
         });

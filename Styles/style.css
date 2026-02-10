@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+.fadein {
+  animation: fadeinanim 1s ease-in
+}
+
+@keyframes fadeinanim {
+  0% {opacity: 0;}
+  100% {opacity: 100;}
+}
+
 .bg {
   background-image: url("../Images/bgplace.png");
   background-color: #cccccc;
@@ -145,10 +154,10 @@ h1, footer {
 .pet-button {
   position: absolute;
 
-  top: 25%;
-  left: 30%;
-  width: 40%;
-  height: 20%;
+  top: 10%;
+  left: 32%;
+  width: 25%;
+  height: 15%;
 
   background: transparent;
   border: none;
