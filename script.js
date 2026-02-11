@@ -36,17 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let clickTimeout;
 
-   const rect = cardImage.getBoundingClientRect();
-
    let canClick = true;
   const cooldownTime = 750;
 
   headButton.addEventListener("mousedown", () => {
 
     if (!canClick) return;
+    const rect = cardImage.getBoundingClientRect();
+
     canClick = false;
     patted = true
-    const wrapper = document.querySelector(".floating-image");
+    const wrapper = cardImage.closest(".floating-image");
 
     clearTimeout(clickTimeout);
     cardImage.src = clickSrc;

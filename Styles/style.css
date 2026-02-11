@@ -25,7 +25,6 @@
 
 .intro {
   padding: 15%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +41,6 @@
 .BWT {
   color:white;
   font-size: 5cap;
-  text-decoration-style: wavy;
   font-family: cursive;
   text-align: center;
 }
@@ -50,9 +48,41 @@
 .MWT {
   color:white;
   font-size: 3cap;
-  text-decoration-style: wavy;
   font-family: cursive;
   text-align: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.buttongrid {
+  height: 125px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7%;
+}
+
+.button1 {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-style: bold;
+  text-decoration: underline;
+  font-family: cursive;
+  font-size: 2cap;
+
+  transition: transform 0.2s ease;
+}
+
+.button1:hover {
+  transform: scale(1.15);
 }
 
 h2, footer {
@@ -161,7 +191,7 @@ h2, footer {
 
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: grab;
 }
 
 /*heart particles*/
