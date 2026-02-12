@@ -123,16 +123,19 @@ document.querySelectorAll(".pettable-image").forEach(container => {
 
     cardImage.src = clickSrc;
 
-    cardImage.classList.remove("squish");
-    void cardImage.offsetWidth;
-    cardImage.classList.add("squish");
+   
 
     const particleCount = 7;
     const delayBetween = 75;
 
     clickTimeout = setTimeout(() => {
+      if (patted) return;
       cardImage.src = idleSrc;
     }, 900);
+
+    cardImage.classList.remove("squish");
+    void cardImage.offsetWidth;
+    cardImage.classList.add("squish");
 
     sqeaksound.play();
 
