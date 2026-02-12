@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(105, 80, 59);
+}
+
 .fadein {
   animation: fadeinanim 1s ease-in
 }
@@ -19,15 +23,6 @@ header, footer {
   height: 125px;
   margin: 0px;
   padding: 0px;
-}
-
-.buttongrid {
-  margin-right: auto;
-  width: 80%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
 }
 
 .bg {
@@ -55,11 +50,24 @@ header, footer {
   margin-left: auto;
 }
 
+.section-middle {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 .BWT {
   color:white;
   font-size: 5cap;
   font-family: cursive;
   text-align: center;
+}
+
+.BWT2 {
+  color:white;
+  font-size: 5cap;
+  font-family: cursive;
+  text-align: center;
+  width: 100%;
 }
 
 .MWT {
@@ -86,6 +94,7 @@ header {
 }
 
 .button1 {
+  display: inline-block;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -230,3 +239,43 @@ header {
 /* .pet-button:hover {
   outline: 2px dashed rgba(255, 0, 0, 0.6);
 } */
+
+.biggallery {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 25px;
+  margin: auto;
+}
+
+.gallery-image {
+  position: relative;
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:active {
+  cursor: grabbing;
+}
+
+.info-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+
+  color: white;
+  text-align: center;
+  font-family: cursive;
+  font-size: 2.5cap;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
