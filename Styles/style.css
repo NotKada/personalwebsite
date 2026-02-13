@@ -246,16 +246,24 @@ header {
   height: auto;
   
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
   gap: 0;
   padding: 25px;
   margin: auto;
 }
 
 .gallery-image {
+  border-radius: 50px;
   position: relative;
   cursor: grab;
   transition: transform 0.3s ease;
+  width: 500px;   
+  aspect-ratio: 1 / 1;   
+  overflow: hidden;
+}
+
+.gallery-image:hover {
+  z-index: 10;
 }
 
 .gallery-image:active {
@@ -273,9 +281,17 @@ header {
   text-align: center;
   font-family: cursive;
   font-size: 2.5cap;
+  text-shadow: 2px 2px black;
 
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
   pointer-events: none;
+}
+
+.image1 {
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
