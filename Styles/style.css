@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'InkFree';
+  src: url(Inkfree.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'InkFree';
 }
 
 body {
@@ -58,14 +64,12 @@ header, footer {
 .BWT {
   color:white;
   font-size: 5cap;
-  font-family: cursive;
   text-align: center;
 }
 
 .BWT2 {
   color:white;
   font-size: 5cap;
-  font-family: cursive;
   text-align: center;
   width: 100%;
 }
@@ -73,7 +77,6 @@ header, footer {
 .MWT {
   color:white;
   font-size: 3cap;
-  font-family: cursive;
   text-align: center;
 }
 
@@ -101,7 +104,6 @@ header {
   color: white;
   font-style: bold;
   text-decoration: underline;
-  font-family: cursive;
   font-size: 3cap;
 
   transition: transform 0.2s ease;
