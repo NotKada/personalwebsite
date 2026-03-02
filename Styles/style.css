@@ -74,6 +74,14 @@ header, footer {
   width: 100%;
 }
 
+.BWT3 {
+  color:white;
+  font-size: 8cap;
+  text-align: center;
+  width: 100%;
+}
+
+
 .MWT {
   color:white;
   font-size: 3cap;
@@ -114,6 +122,8 @@ header {
 }
 
 .logo {
+  position: absolute;
+  align-self:normal;
   margin: 12.5px;
   height: 100px;
   width: 100px;
@@ -243,7 +253,6 @@ header {
 } */
 
 .biggallery {
-  position: absolute;
   width: 100%;
   height: auto;
   
@@ -296,4 +305,11 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.centered-title {
+  position: absolute;
+  margin-top: auto;
+  margin-left: 35%;
+  margin-right: 35%;
 }
