@@ -1,5 +1,19 @@
 const particleSrc = "Images/Heart.png";
 var sqeaksound = new Audio('Sounds/Squeak.mp3');
+var entersound = new Audio('Sounds/Doorbell.mp3')
+
+
+// function playWelcomeSound() {
+//     entersound.play();
+//     document.removeEventListener("click", playWelcomeSound);
+// }
+
+// document.addEventListener("click", playWelcomeSound);
+
+document.getElementById("ring-button").addEventListener("click", function() {
+  var ringsound = new Audio('Sounds/Ring.mp3')
+  ringsound.play()
+})
 
 document.querySelectorAll(".pettable-image").forEach(container => {
 
