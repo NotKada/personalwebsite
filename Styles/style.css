@@ -3,6 +3,10 @@
   src: url(Inkfree.ttf);
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +15,7 @@
 }
 
 body {
-  background-color: rgb(105, 80, 59);
+  background-color: rgb(238, 190, 202);
 }
 
 .fadein {
@@ -24,7 +28,7 @@ body {
 }
 
 header, footer {
-  background: rgb(105, 80, 59);
+  background: rgb(238, 190, 202);
   width: 100%;
   height: 125px;
   margin: 0px;
@@ -32,9 +36,10 @@ header, footer {
 }
 
 .bg {
-  background-image: url("../Images/bgplace.png");
+  background-image: url("../Images/CafeBackground.png");
   background-color: #cccccc;
-  height: 1000px;
+  height: 100%;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,6 +167,19 @@ header {
     txt1rotate 11s ease-in-out infinite;
 }
 
+.cafe-idle {
+  padding: 0%;
+  padding-top: 1%;
+  animation:
+    cafeidlebreath 5s ease-in-out infinite;
+}
+
+@keyframes cafeidlebreath {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1, 0.985);}
+  100% { transform: scale(1); }
+}
+
 @keyframes txt1floatY {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-7px); }
@@ -222,6 +240,37 @@ header {
   background: transparent;
   border: none;
   cursor: grab;
+}
+
+.kofi-button {
+  position: absolute;
+  top: 70%;
+  left: 59.5%;
+  width: 4%;
+  height: 4%;
+
+  size: 100%;
+  background: transparent;
+  border: none;
+}
+
+.kofi-button-decal {
+  width: 100%
+}
+
+.ring-button {
+  position: absolute;
+  top: 73%;
+  left: 57.75%;
+  width: 4%;
+  height: 4%;
+
+  width: 4%;
+  height: 6%;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /*heart particles*/
