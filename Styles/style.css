@@ -362,3 +362,64 @@ header {
   margin-left: 35%;
   margin-right: 35%;
 }
+
+/*EMBERDLE*/
+
+.emberdle-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.game-board {
+  width: 350px;
+  height: 420px;
+}
+
+.word-row {
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+
+  /* grid-template-columns: repeat(5, 1fr); */
+}
+
+.letter-box {
+  height: 90%;
+  aspect-ratio: 1/1;
+  margin: 1%;
+
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(212, 129, 149);
+}
+
+.inner-letter-box {
+  font-size: 40px; 
+  text-align: justify; 
+  color: rgb(212, 129, 149);
+}
+
+.correct-letter {
+  background-color: rgb(172, 219, 190) !important;
+  background-size: auto;
+}
+
+.missplaced-letter {
+  background-color: rgb(209, 219, 172) !important;
+  background-size: auto;
+}
+
+.incorrect-letter {
+  background-color: rgb(180, 149, 168) !important;
+  background-size: auto;
+}
