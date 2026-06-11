@@ -5,6 +5,8 @@ let letter = 1
 let currentWord = ""
 
 let validWords = new Set();
+
+let gameStatus = "Playing"
 fetch("emberdlewords.txt")
     .then(response => response.text())
     .then(text => {
@@ -48,40 +50,46 @@ window.addEventListener("keydown", function(key){
             thisletter.textContent = ""
         }
     } else if (key.key == "Enter") {
-        if (currentWord.length == 5 )  { //&& isValidWord(currentWord)
+        if (currentWord.length == 5 && isValidWord(currentWord))  { //This breaks on local html
             let thisrow = this.document.getElementById(`word-row${row}`)
             
             let tempword = theword
             for (let i = 0; i < 5; i++) {
                 let thisletter = thisrow.querySelector(`#letter${i+1}`)
-
                 if (currentWord.charAt(i) == tempword.charAt(i)) {
                     tempword = replaceChar(tempword, i)
                     thisletter.parentElement.classList.add("correct-letter")
-
-                    console.log(tempword)
-                } else {
-                    let found = false
+                } 
+            }
+            if (tempword == "-----") {
+                gameStatus == "Victory"
+                console.log("Victory")
+            }
+            for (let i = 0; i < 5; i++) {
+                let found = false
+                let thisletter = thisrow.querySelector(`#letter${i+1}`)
+                if (!thisletter.parentElement.classList.contains("correct-letter")){
                     for (let j = 0; j < 5; j++) {
-                        if (currentWord.charAt(i) == tempword.charAt(j) && found == false) {
-                            tempword = replaceChar(tempword, i)
-                            thisletter.parentElement.classList.add("missplaced-letter")
-
-                            console.log(tempword)
-                            found = true
-                        }
-                        if (found == false) {
-                            thisletter.parentElement.classList.add("incorrect-letter")
-                        }
+                    if (currentWord.charAt(i) == tempword.charAt(j) && found == false) {
+                        tempword = replaceChar(tempword, j)
+                        thisletter.parentElement.classList.add("missplaced-letter")
+                        found = true
                     }
-                }
-            }       
+                    }
+                    if (found == false) {
+                            thisletter.parentElement.classList.add("incorrect-letter")
+                    }
+                }   
+            }
 
             currentWord = ""
             letter = 1
             if (row < 6) {
                 row += 1
-            }
+            } else if (!gameStatus == "Victory") {
+                gameStatus == "Loss"
+                console.log("Loss")
+            } 
         }
     }
 })

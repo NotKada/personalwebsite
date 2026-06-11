@@ -415,11 +415,11 @@ header {
 }
 
 .missplaced-letter {
-  background-color: rgb(209, 219, 172) !important;
+  background-color: rgb(219, 210, 172);
   background-size: auto;
 }
 
 .incorrect-letter {
-  background-color: rgb(180, 149, 168) !important;
+  background-color: rgb(168, 155, 163);
   background-size: auto;
 }
