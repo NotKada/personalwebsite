@@ -50,7 +50,7 @@ window.addEventListener("keydown", function(key){
             thisletter.textContent = ""
         }
     } else if (key.key == "Enter") {
-        if (currentWord.length == 5 && isValidWord(currentWord))  { //This breaks on local html
+        if (currentWord.length == 5)  { //This breaks on local html && isValidWord(currentWord)
             let thisrow = this.document.getElementById(`word-row${row}`)
             
             let tempword = theword
